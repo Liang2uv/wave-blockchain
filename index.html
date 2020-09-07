@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浪潮区块链平台</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <h1>浪潮区块链平台</h1>
+  </header>
+  <main>
+    <!-- 顶部信息 -->
+    <section class="msg-box">
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">交易数量</div>
+          <div class="no y">1238</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">块数量</div>
+          <div class="no y">10140</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">合约数量</div>
+          <div class="no">12</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">Peer数量</div>
+          <div class="no">2</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">channel数量</div>
+          <div class="no">2</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">共识机制</div>
+          <div class="no">kafka</div>
+        </div>
+      </div>
+      <div class="msg-panel">
+        <div class="panel-footer"></div>
+        <div class="icon"></div>
+        <div class="msg">
+          <div class="label">生成区块时间</div>
+          <div class="no">2s</div>
+        </div>
+      </div>
+    </section>
+    <!-- 中间图表部分 -->
+    <section class="main-box">
+      <!-- 第一列 -->
+      <div class="column">
+        <div class="panel line">
+          <h2>
+            实时链上交易数据
+          </h2>
+          <div class="chart"></div>
+        </div>
+        <div class="panel bar">
+          <h2>
+            合约交易量
+          </h2>
+          <div class="chart"></div>
+        </div>
+      </div>
+      <!-- 第二列 -->
+      <div class="column">
+        <div class="panel map">
+          <h2>
+            机构地区及交易量分布图
+          </h2>
+          <div class="chart"></div>
+        </div>
+        <div class="panel list1">
+          <div class="table">
+            <table border="0">
+              <tbody>
+                <tr>
+                  <th>属性</th>
+                  <th>值</th>
+                </tr>
+                <tr>
+                  <td>number</td>
+                  <td>2a7djksl3892mdsleawdsl84302902934k</td>
+                </tr>
+                <tr>
+                  <td>date_hash</td>
+                  <td>2a947329nmdxjskskds342jdfs78md832</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table">
+            <table border="0">
+              <tbody>
+                <tr>
+                  <th>节点</th>
+                  <th>组织</th>
+                  <th>MSGID</th>
+                  <th>请求地址</th>
+                </tr>
+                <tr>
+                  <td>peer1</td>
+                  <td>peerOrg1</td>
+                  <td>OrgMSP</td>
+                  <td>grpc://13.157.173.304:7051</td>
+                </tr>
+                <tr>
+                  <td>peer1</td>
+                  <td>peerOrg1</td>
+                  <td>OrgMSP</td>
+                  <td>grpc://13.157.173.304:7051</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- 第三列 -->
+      <div class="column">
+        <div class="panel list2">
+          <h2>
+            块交易量实时滚动信息
+          </h2>
+          <div class="table">
+            <div class="panel-footer"></div>
+            <table border="0">
+              <tbody>
+                <tr>
+                  <th></th>
+                  <th><span class="wrapper">块</span></th>
+                  <th><span class="wrapper">交易量</span></th>
+                </tr>
+                <tr>
+                  <td class="dot"></td>
+                  <td>#23343</td>
+                  <td>51</td>
+                </tr>
+                <tr>
+                  <td class="dot"></td>
+                  <td>#03343</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td class="dot"></td>
+                  <td>#29043</td>
+                  <td>46</td>
+                </tr>
+                <tr>
+                  <td class="dot"></td>
+                  <td>#23043</td>
+                  <td>46</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel list1">
+          <div class="table">
+            <table border="0">
+              <tbody>
+                <tr>
+                  <th>节点类型</th>
+                  <th>节点名称</th>
+                  <th>所属机构</th>
+                </tr>
+                <tr>
+                  <td>Peer</td>
+                  <td>Peer</td>
+                  <td>机构1</td>
+                </tr>
+                <tr>
+                  <td>Orderer</td>
+                  <td>Orderer</td>
+                  <td>机构2</td>
+                </tr>
+                <tr>
+                  <td>Zookeeper</td>
+                  <td>Zookeeper</td>
+                  <td>机构3</td>
+                </tr>
+                <tr>
+                  <td>Kafka</td>
+                  <td>Kafka</td>
+                  <td>机构4</td>
+                </tr>
+                <tr>
+                  <td>Orderer</td>
+                  <td>Orderer</td>
+                  <td>机构5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/flexible.js"></script>
+</body>
+</html>

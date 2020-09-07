@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+/* 字体图标 */
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+/* 圆点发光动画 */
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+  75% {
+    transform: scale(3);
+  }
+  78%,
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(../images/bg.png) no-repeat #000;
+  background-size: cover;
+  line-height: 1.15;
+}
+header {
+  height: 1.25rem;
+}
+header h1 {
+  color: #fff;
+  font-size: 0.4375rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+main {
+  min-width: 1024px;
+  max-width: 1920px;
+  padding: 0.125rem 0.125rem 0;
+  margin: 0 auto;
+  /* 顶部信息 */
+  /* 中间图表部分 */
+}
+main .msg-box {
+  display: flex;
+  justify-content: space-between;
+}
+main .msg-box .msg-panel {
+  flex: 1;
+  height: 1rem;
+  border: 2px solid rgba(4, 67, 136, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  position: relative;
+  background-color: rgba(0, 8, 51, 0.2);
+}
+main .msg-box .msg-panel:nth-child(n + 2) {
+  margin-left: 0.25rem;
+}
+main .msg-box .msg-panel::before {
+  position: absolute;
+  top: -3px;
+  left: -2px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0175d0;
+}
+main .msg-box .msg-panel::after {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0175d0;
+}
+main .msg-box .msg-panel .panel-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+main .msg-box .msg-panel .panel-footer::before {
+  position: absolute;
+  bottom: -3px;
+  left: -2px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #0175d0;
+}
+main .msg-box .msg-panel .panel-footer::after {
+  position: absolute;
+  bottom: -3px;
+  right: -2px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #0175d0;
+}
+main .msg-box .msg-panel .icon {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-right: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+main .msg-box .msg-panel .msg {
+  text-align: center;
+}
+main .msg-box .msg-panel .msg .label {
+  font-size: 0.15rem;
+  color: #fff;
+  margin-bottom: 0.125rem;
+}
+main .msg-box .msg-panel .msg .no {
+  font-size: 0.325rem;
+  color: #00e4ff;
+  text-shadow: 0 0 0.2em #00e4ff;
+}
+main .msg-box .msg-panel .msg .no.y {
+  font-size: 0.375rem;
+  color: #f1b00f;
+  text-shadow: 0 0 0.2em #f1b00f;
+  font-family: electronicFont;
+}
+main .main-box {
+  display: flex;
+  margin-top: 0.125rem;
+}
+main .main-box .column {
+  flex: 2;
+}
+main .main-box .column:nth-child(2) {
+  margin: 0px 0.125rem;
+  flex: 3;
+}
+main .main-box .column .panel {
+  margin-bottom: 0.125rem;
+  height: 3.75rem;
+  background-color: rgba(0, 8, 51, 0.2);
+  padding: 0 0.125rem 0.125rem 0.125rem;
+}
+main .main-box .column .panel h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 0.2rem;
+  line-height: 0.5rem;
+  height: 0.5rem;
+}
+main .main-box .column .panel .chart {
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+main .main-box .column .list2 .table {
+  border-top: 3px solid rgba(4, 67, 136, 0.4);
+  border-bottom: 3px solid rgba(4, 67, 136, 0.4);
+  position: relative;
+}
+main .main-box .column .list2 .table::before {
+  position: absolute;
+  top: -3px;
+  left: -2px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #0175d0;
+}
+main .main-box .column .list2 .table::after {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #0175d0;
+}
+main .main-box .column .list2 .table .panel-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+main .main-box .column .list2 .table .panel-footer::before {
+  position: absolute;
+  bottom: -3px;
+  left: -2px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid #0175d0;
+}
+main .main-box .column .list2 .table .panel-footer::after {
+  position: absolute;
+  bottom: -3px;
+  right: -2px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid #0175d0;
+}
+main .main-box .column .list2 .table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+main .main-box .column .list2 .table table tr > th,
+main .main-box .column .list2 .table table tr > td {
+  text-align: center;
+  height: 0.5rem;
+  background-color: rgba(4, 35, 105, 0.5);
+}
+main .main-box .column .list2 .table table tr > th {
+  color: #fff;
+  font-size: 0.125rem;
+}
+main .main-box .column .list2 .table table tr > th .wrapper {
+  padding: 0.0625rem 0.3125rem;
+  border-radius: 0.125rem;
+  height: 0.375rem;
+  background-color: rgba(3, 56, 132, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+main .main-box .column .list2 .table table tr > td {
+  color: #00e4ff;
+  text-shadow: 0 0 0.2em #00e4ff;
+  font-size: 0.225rem;
+}
+main .main-box .column .list2 .table table tr:nth-child(2) > td.dot {
+  width: 1.25rem;
+  position: relative;
+}
+main .main-box .column .list2 .table table tr:nth-child(2) > td.dot::before {
+  content: "";
+  display: block;
+  width: 0.1875rem;
+  height: 0.1875rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/dot-green.png) no-repeat;
+  background-size: 100% 100%;
+}
+main .main-box .column .list2 .table table tr:nth-child(n+3) > td.dot {
+  width: 1.25rem;
+  position: relative;
+}
+main .main-box .column .list2 .table table tr:nth-child(n+3) > td.dot::before {
+  content: "";
+  display: block;
+  width: 0.1875rem;
+  height: 0.1875rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/dot-blue.png) no-repeat;
+  background-size: 100% 100%;
+}
+main .main-box .column .list1 {
+  padding: 0.125rem;
+  display: flex;
+  flex-direction: column;
+}
+main .main-box .column .list1 .table {
+  position: relative;
+  flex: 1;
+}
+main .main-box .column .list1 .table:nth-child(n+2) {
+  margin-top: 0.125rem;
+}
+main .main-box .column .list1 .table::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 0.0625rem solid rgba(1, 164, 255, 0.4);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  bottom: 0;
+  left: 0;
+}
+main .main-box .column .list1 .table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+  height: 100%;
+}
+main .main-box .column .list1 .table table tr > th,
+main .main-box .column .list1 .table table tr > td {
+  text-align: center;
+  background-color: rgba(4, 35, 105, 0.5);
+}
+main .main-box .column .list1 .table table tr > td {
+  border-top: 2px solid rgba(4, 67, 136, 0.4);
+  color: #fff;
+}
+main .main-box .column .list1 .table table tr > td:nth-child(n+2) {
+  color: #00e4ff;
+  text-shadow: 0 0 0.2em #00e4ff;
+}
+main .main-box .column .list1 .table table tr > th {
+  color: #fff;
+  background-color: rgba(3, 53, 118, 0.5);
+}
+main .main-box .column .list1 .table table tr > th .wrapper {
+  padding: 0.0625rem 0.3125rem;
+  border-radius: 0.125rem;
+  height: 0.375rem;
+  background-color: rgba(3, 56, 132, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
