@@ -151,7 +151,8 @@ main {
         }
         .chart {
           height: 3rem;
-          background-color: rgba(255, 255, 255, .3);
+          position: relative;
+          // background-color: rgba(255, 255, 255, .3);
         }
       }
       // ------ start 块交易量实时滚动信息 -----
@@ -207,7 +208,7 @@ main {
           table {
             width: 100%;
             border-collapse:separate;
-            border-spacing:0px 10px;
+            border-spacing:0px 0.125rem;
             tr > th, tr > td {
               text-align: center;
               height: 0.5rem;
@@ -295,6 +296,7 @@ main {
             border-spacing:0px 0px;
             height: 100%;
             tr > th, tr > td {
+              font-size: 0.2rem;
               text-align: center;
               background-color: rgba(4, 35, 105, .5);
             }

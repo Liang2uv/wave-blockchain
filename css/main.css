@@ -161,7 +161,7 @@ main .main-box .column .panel h2 {
 }
 main .main-box .column .panel .chart {
   height: 3rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
 }
 main .main-box .column .list2 .table {
   border-top: 3px solid rgba(4, 67, 136, 0.4);
@@ -213,7 +213,7 @@ main .main-box .column .list2 .table .panel-footer::after {
 main .main-box .column .list2 .table table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0px 10px;
+  border-spacing: 0px 0.125rem;
 }
 main .main-box .column .list2 .table table tr > th,
 main .main-box .column .list2 .table table tr > td {
@@ -301,6 +301,7 @@ main .main-box .column .list1 .table table {
 }
 main .main-box .column .list1 .table table tr > th,
 main .main-box .column .list1 .table table tr > td {
+  font-size: 0.2rem;
   text-align: center;
   background-color: rgba(4, 35, 105, 0.5);
 }
