@@ -92,10 +92,10 @@
       show: true,
       trigger: 'axis',
       formatter: `
-        <div style="text-align: center; font-size: 0.225rem; color: #00e4ff">
+        <div style="text-align: center; font-size: 0.2125rem; color: #00e4ff;margin-bottom: 0.0625rem">
         {c}
         </div>
-        <div style="text-align: center;font-size: 0.175rem">
+        <div style="text-align: center;font-size: 0.1375rem">
         17:53:15
         </div>
       `,
@@ -110,12 +110,13 @@
       containLabel: true
     },
     legend: {
+      show: true,
       right: '0%',
+      icon : 'image://../../images/line.png',
       textStyle: {
         color: '#c5ccff',
         fontSize: 10
-      },
-      icon: 'rect'
+      }
     },
     xAxis: {
       data: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"],

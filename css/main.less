@@ -17,6 +17,17 @@ li {
   50%,75%{transform:scale(3)}
   78%,100%{opacity:0}
 }
+/* 约束屏幕尺寸 */
+// @media screen and (max-width: 1024px) {
+//   html {
+//     font-size: 42px !important;
+//   }
+// }
+// @media screen and (min-width: 1920px) {
+//   html {
+//     font-size: 80px !important;
+//   }
+// }
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -52,7 +63,7 @@ main {
       align-items: center;
       padding: 0.25rem;
       position: relative;
-      background-color: rgba(0, 8, 51, .2);
+      background-color: rgba(0, 21, 100, .6);
       &:nth-child(n + 2) {
         margin-left: 0.25rem;
       }
@@ -104,7 +115,11 @@ main {
         width: 0.625rem;
         height: 0.625rem;
         margin-right: 0.25rem;
-        background-color: rgba(255, 255, 255, .3);
+        // background-color: rgba(255, 255, 255, .3);
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       .msg {
         text-align: center;
@@ -139,9 +154,12 @@ main {
       }
       .panel {
         margin-bottom: 0.125rem;
-        height: 3.75rem;
-        background-color: rgba(0, 8, 51, .2);
+        height: 4.5rem;
+        // height: 3.75rem;
+        background-color: rgba(0, 21, 100, .6);
         padding: 0 0.125rem 0.125rem 0.125rem;
+        display: flex;
+        flex-direction: column;
         h2 {
           color: #fff;
           text-align: center;
@@ -150,17 +168,21 @@ main {
           height: 0.5rem;
         }
         .chart {
-          height: 3rem;
+          // height: 3rem;
           position: relative;
+          flex: 1;
           // background-color: rgba(255, 255, 255, .3);
         }
       }
       // ------ start 块交易量实时滚动信息 -----
       .list2 {
+        display: flex;
+        flex-direction: column;
         .table {
           border-top: 3px solid rgba(4, 67, 136, 0.4);
           border-bottom: 3px solid rgba(4, 67, 136, 0.4);
           position: relative;
+          flex: 1;
           // ----start 四个角的小短线-----
           &::before {
             position: absolute;
@@ -209,6 +231,7 @@ main {
             width: 100%;
             border-collapse:separate;
             border-spacing:0px 0.125rem;
+            height: 100%;
             tr > th, tr > td {
               text-align: center;
               height: 0.5rem;
@@ -228,7 +251,7 @@ main {
             tr > td {
               color: rgb(0, 228, 255);
               text-shadow: 0 0 0.2em rgb(0, 228, 255);
-              font-size: 0.225rem;
+              font-size: 0.175rem;
               
             }
             tr:nth-child(2) > td.dot {
@@ -296,7 +319,7 @@ main {
             border-spacing:0px 0px;
             height: 100%;
             tr > th, tr > td {
-              font-size: 0.2rem;
+              font-size: 0.175rem;
               text-align: center;
               background-color: rgba(4, 35, 105, .5);
             }
