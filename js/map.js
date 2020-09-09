@@ -91,7 +91,6 @@
         res.push(obj);
       }
     }
-    console.log("完成", res);
     return res;
   };
 
@@ -150,6 +149,24 @@
             },
           },
           data: [{ name: "北京", value: 21300 }],
+          markPoint: {
+            symbol: 'rect',
+            symbolSize: 15,
+            symbolOffset: ['-120%', '120%'],
+            itemStyle: {
+              color: 'red'
+            },
+            label: {
+              fontSize: 10,
+            },
+            data: (function () {
+              return data.filter(v => v.mark).map(v => ({
+                name: v.name,
+                value: v.mark,
+                coord: geoCoordMap[v.name]
+              }))
+            })()
+          }
         },
         {
           name: "三级",

@@ -1,3 +1,4 @@
+/* 初始化相关配置 */
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +6,6 @@
 }
 li {
   list-style: none;
-}
-/* 字体图标 */
-@font-face {
-  font-family: electronicFont;
-  src: url(../font/DS-DIGIT.TTF);
-}
-/* 圆点发光动画 */
-@keyframes scale{
-  0%{transform:scale(1)}
-  50%,75%{transform:scale(3)}
-  78%,100%{opacity:0}
 }
 /* 约束屏幕尺寸 */
 // @media screen and (max-width: 1024px) {
@@ -36,6 +26,86 @@ body {
   background-size: cover;
   line-height: 1.15;
 }
+
+/* 字体图标 */
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+
+/* 颜色集合 */
+#colors() {
+  // 面板边框
+  border: rgba(4, 67, 136, 0.4);
+  // 面板背景
+  bgPanel: rgba(0, 21, 100, .6);
+  // 面板的浅蓝色背景（表头）
+  lightBlue1: rgba(3, 56, 132, .5);
+  // 面板的浅蓝色背景（表行）
+  lightBlue2: rgba(4, 35, 105, .5);
+  // 面板的小短线颜色
+  shortLine: #0175d0;
+  // 字体颜色：黄色
+  fc1: rgb(241, 176, 15);
+  // 字体颜色：蓝色
+  fc2: rgb(0, 228, 255);
+}
+
+/* 字体大小集合 */
+#fontSize() {
+  // 表格内容区文字大小
+  fs1: 0.175rem;
+}
+
+/* mixins */
+// 方框四个角的小短线
+.shortLint(@len) {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    content: "";
+    width: @len;
+    height: @len;
+    border-top: 2px solid #colors[shortLine];
+  }
+  &::after {
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    content: "";
+    width: @len;
+    height: @len;
+    border-top: 2px solid #colors[shortLine];
+  }
+  .panel-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    &::before {
+      position: absolute;
+      bottom: -3px;
+      left: -2px;
+      content: "";
+      width: @len;
+      height: @len;
+      border-bottom: 2px solid #colors[shortLine];
+    }
+    &::after {
+      position: absolute;
+      bottom: -3px;
+      right: -2px;
+      content: "";
+      width: @len;
+      height: @len;
+      border-bottom: 2px solid #colors[shortLine];
+    }
+  }
+}
+
+
 header {
   height: 1.25rem;
   h1 {
@@ -57,60 +127,16 @@ main {
     .msg-panel {
       flex: 1;
       height: 1rem;
-      border: 2px solid rgba(4, 67, 136, 0.4);
+      border: 2px solid #colors[border];
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0.25rem;
-      position: relative;
-      background-color: rgba(0, 21, 100, .6);
+      background-color: #colors[bgPanel];
       &:nth-child(n + 2) {
         margin-left: 0.25rem;
       }
-      // ----start 四个角的小短线-----
-      &::before {
-        position: absolute;
-        top: -3px;
-        left: -2px;
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid #0175d0;
-      }
-      &::after {
-        position: absolute;
-        top: -3px;
-        right: -2px;
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid #0175d0;
-      }
-      .panel-footer {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        &::before {
-          position: absolute;
-          bottom: -3px;
-          left: -2px;
-          content: "";
-          width: 10px;
-          height: 10px;
-          border-bottom: 2px solid #0175d0;
-        }
-        &::after {
-          position: absolute;
-          bottom: -3px;
-          right: -2px;
-          content: "";
-          width: 10px;
-          height: 10px;
-          border-bottom: 2px solid #0175d0;
-        }
-      }
-      // ----end 四个角的小短线-----
+      .shortLint(10px);
       .icon {
         width: 0.625rem;
         height: 0.625rem;
@@ -130,12 +156,12 @@ main {
         }
         .no {
           font-size: 0.325rem;
-          color: rgb(0, 228, 255);
-          text-shadow: 0 0 0.2em rgb(0, 228, 255);
+          color: #colors[fc2];
+          text-shadow: 0 0 0.2em #colors[fc2];
           &.y {
             font-size: 0.375rem;
-            color: rgb(241, 176, 15);
-            text-shadow: 0 0 0.2em rgb(241, 176, 15);
+            color: #colors[fc1];
+            text-shadow: 0 0 0.2em #colors[fc1];
             font-family: electronicFont;
           }
         }
@@ -156,7 +182,7 @@ main {
         margin-bottom: 0.125rem;
         height: 4.5rem;
         // height: 3.75rem;
-        background-color: rgba(0, 21, 100, .6);
+        background-color: #colors[bgPanel];
         padding: 0 0.125rem 0.125rem 0.125rem;
         display: flex;
         flex-direction: column;
@@ -179,54 +205,10 @@ main {
         display: flex;
         flex-direction: column;
         .table {
-          border-top: 3px solid rgba(4, 67, 136, 0.4);
-          border-bottom: 3px solid rgba(4, 67, 136, 0.4);
-          position: relative;
+          border-top: 3px solid #colors[border];
+          border-bottom: 3px solid #colors[border];
           flex: 1;
-          // ----start 四个角的小短线-----
-          &::before {
-            position: absolute;
-            top: -3px;
-            left: -2px;
-            content: "";
-            width: 15px;
-            height: 15px;
-            border-top: 2px solid #0175d0;
-          }
-          &::after {
-            position: absolute;
-            top: -3px;
-            right: -2px;
-            content: "";
-            width: 15px;
-            height: 15px;
-            border-top: 2px solid #0175d0;
-          }
-          .panel-footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            &::before {
-              position: absolute;
-              bottom: -3px;
-              left: -2px;
-              content: "";
-              width: 15px;
-              height: 15px;
-              border-bottom: 2px solid #0175d0;
-            }
-            &::after {
-              position: absolute;
-              bottom: -3px;
-              right: -2px;
-              content: "";
-              width: 15px;
-              height: 15px;
-              border-bottom: 2px solid #0175d0;
-            }
-          }
-          // ----end 四个角的小短线-----
+          .shortLint(15px);
           table {
             width: 100%;
             border-collapse:separate;
@@ -235,7 +217,7 @@ main {
             tr > th, tr > td {
               text-align: center;
               height: 0.5rem;
-              background-color: rgba(4, 35, 105, .5);
+              background-color: #colors[lightBlue2];
             }
             tr > th {
               color: #fff;
@@ -244,14 +226,14 @@ main {
                 padding: 0.0625rem 0.3125rem;
                 border-radius: 0.125rem;
                 height: 0.375rem;
-                background-color: rgba(3, 56, 132, .5);
+                background-color: #colors[lightBlue1];
                 border: 1px solid rgba(255, 255, 255, .1);
               }
             }
             tr > td {
-              color: rgb(0, 228, 255);
-              text-shadow: 0 0 0.2em rgb(0, 228, 255);
-              font-size: 0.175rem;
+              color: #colors[fc2];
+              text-shadow: 0 0 0.2em #colors[fc2];
+              font-size: #fontSize[fs1];
               
             }
             tr:nth-child(2) > td.dot {
@@ -319,28 +301,21 @@ main {
             border-spacing:0px 0px;
             height: 100%;
             tr > th, tr > td {
-              font-size: 0.175rem;
+              font-size: #fontSize[fs1];
               text-align: center;
-              background-color: rgba(4, 35, 105, .5);
+              background-color: #colors[lightBlue2];
             }
             tr > td {
-              border-top: 2px solid rgba(4, 67, 136, 0.4);
+              border-top: 2px solid #colors[border];
               color: #fff;
               &:nth-child(n+2) {
-                color: rgb(0, 228, 255);
-                text-shadow: 0 0 0.2em rgb(0, 228, 255);
+                color: #colors[fc2];
+                text-shadow: 0 0 0.2em #colors[fc2];
               }
             }
             tr > th {
               color: #fff;
-              background-color: rgba(3, 53, 118, .5);
-              .wrapper{
-                padding: 0.0625rem 0.3125rem;
-                border-radius: 0.125rem;
-                height: 0.375rem;
-                background-color: rgba(3, 56, 132, .5);
-                border: 1px solid rgba(255, 255, 255, .1);
-              }
+              background-color: #colors[lightBlue1];
             }
           }
         }
