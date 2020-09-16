@@ -112,7 +112,7 @@
     legend: {
       show: true,
       right: '0%',
-      icon : 'image://../../images/line.png',
+      icon : 'image://images/line.png',
       textStyle: {
         color: '#c5ccff',
         fontSize: 10
