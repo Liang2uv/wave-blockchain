@@ -8,5 +8,4 @@
   2. echarts应用
   3. echarts地图插件
 
-- [在线演示](https://www.liangbb.top/wave-blockchain
-/)
+- [在线演示]([https://liang2uv.github.io/wave-blockchain/](https://liang2uv.github.io/wave-blockchain/)
